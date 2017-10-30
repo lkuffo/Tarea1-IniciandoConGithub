@@ -3,6 +3,8 @@
 /* maximum input line length */
 int getline2(char line[], int maxline);
 void copy(char to[], char from[]);
+int strlen2(char s[]);
+void squeeze(char s[], int c);
 
 int main()
 {
@@ -44,4 +46,23 @@ int i;
 i = 0;
 while ((to[i] = from[i]) != '\0')
 ++i;
+}
+
+/* strlen: return length of s */
+int strlen2(char s[])
+{
+int i;
+while (s[i] != '\0')
+++i;
+return i;
+}
+
+/* squeeze: delete all c from s */
+void squeeze(char s[], int c)
+{
+int i, j;
+for (i = j = 0; s[i] != '\0'; i++)
+if (s[i] != c)
+s[j++] = s[i];
+s[j] = '\0';
 }
